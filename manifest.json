@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Mental Health Detector",
+    "version": "1.0",
+    "description": "Detects mental health concerns in Google searches.",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://www.google.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.google.com/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+	"default_icon": {
+      		"128": "icon.png"
+    }
+    }
+}
